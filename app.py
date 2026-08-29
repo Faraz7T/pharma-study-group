@@ -67,9 +67,9 @@ if prompt := st.chat_input("سوال داروشناسی، نکته درسی یا
                     messages_to_send.append({"role": role, "content": f"{m['user']}: {m['text']}"})
 
                 try:
-                    # فراخوانی مدل پرسرعت و رایگان
+                    # استفاده از مدلی که قطعاً در دسترس است
                     response = client.chat.completions.create(
-                        model="llama-3.3-70b-versatile",
+                        model="llama-3.1-8b-instant",
                         messages=messages_to_send,
                         temperature=0.6,
                     )
